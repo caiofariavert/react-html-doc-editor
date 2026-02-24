@@ -7,7 +7,6 @@ import { TableHeader } from '@tiptap/extension-table-header';
 import { TableRow } from '@tiptap/extension-table-row';
 import Variable from '../extensions/Variable';
 import WysiwygToolbar from './WysiwygToolbar';
-import '../styles/editor.css';
 
 interface WysiwygEditorProps {
   onContentChange?: (html: string) => void;

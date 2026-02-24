@@ -1,0 +1,193 @@
+/* Estilos básicos do editor */
+.editor-container {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Estilos do WYSIWYG Editor */
+.wysiwyg-editor-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.wysiwyg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+}
+
+.wysiwyg-toolbar button {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.wysiwyg-toolbar button:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.wysiwyg-toolbar button:active,
+.wysiwyg-toolbar button.active {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0052a3;
+}
+
+.wysiwyg-toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background: #ddd;
+  margin: 0 4px;
+}
+
+.wysiwyg-editor-content {
+  padding: 20px;
+  min-height: 200px;
+  max-height: 600px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Estilo dos nós de conteúdo */
+.wysiwyg-editor-content p {
+  margin: 0.75em 0;
+}
+
+.wysiwyg-editor-content h1,
+.wysiwyg-editor-content h2,
+.wysiwyg-editor-content h3 {
+  margin: 1em 0 0.5em 0;
+  font-weight: 600;
+}
+
+.wysiwyg-editor-content h1 {
+  font-size: 2em;
+}
+
+.wysiwyg-editor-content h2 {
+  font-size: 1.5em;
+}
+
+.wysiwyg-editor-content h3 {
+  font-size: 1.25em;
+}
+
+.wysiwyg-editor-content ul,
+.wysiwyg-editor-content ol {
+  margin: 0.75em 0;
+  padding-left: 2em;
+}
+
+.wysiwyg-editor-content li {
+  margin: 0.25em 0;
+}
+
+/* Estilo das tabelas */
+.wysiwyg-editor-content table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.wysiwyg-editor-content table td,
+.wysiwyg-editor-content table th {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.wysiwyg-editor-content table th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.wysiwyg-editor-content table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Estilo das variáveis */
+.variable-node {
+  background: #e3f2fd;
+  border: 1px solid #2196f3;
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: #1565c0;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.variable-node:hover {
+  background: #bbdefb;
+}
+
+/* Foco do editor */
+.ProseMirror {
+  outline: none;
+}
+
+.ProseMirror:focus-visible {
+  outline: none;
+}
+
+.wysiwyg-editor-content:focus-within {
+  background: #fafafa;
+}
+
+/* Placeholder */
+.ProseMirror.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #aaa;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .wysiwyg-toolbar {
+    gap: 2px;
+  }
+
+  .wysiwyg-toolbar button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .toolbar-separator {
+    margin: 0 2px;
+  }
+
+  .wysiwyg-editor-content {
+    padding: 12px;
+    min-height: 150px;
+    max-height: 400px;
+  }
+}
+

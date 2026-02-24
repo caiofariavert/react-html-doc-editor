@@ -55,6 +55,19 @@ function App() {
 export default App;
 ```
 
+## Importando estilos CSS
+
+Para que o editor tenha o styling correto, você precisa importar o arquivo CSS em sua aplicação:
+
+```tsx
+import 'react-html-doc-editor/dist/styles/editor.css';
+```
+
+Você pode fazer essa importação em:
+- **main.tsx** ou **main.jsx** - para importar globalmente
+- **App.tsx** - para importar apenas onde usa o editor
+- **Seu arquivo CSS** - usando `@import url(...)`
+
 ## Importando arquivos .docx
 
 O componente Editor já inclui suporte para importar arquivos do Word (.docx):

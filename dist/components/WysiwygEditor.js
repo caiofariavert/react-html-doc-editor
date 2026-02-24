@@ -7,7 +7,6 @@ import { TableHeader } from '@tiptap/extension-table-header';
 import { TableRow } from '@tiptap/extension-table-row';
 import Variable from '../extensions/Variable.js';
 import WysiwygToolbar from './WysiwygToolbar.js';
-import '../styles/editor.css';
 const WysiwygEditor = ({ onContentChange, initialContent = '' }) => {
     const editor = useEditor({
         extensions: [
