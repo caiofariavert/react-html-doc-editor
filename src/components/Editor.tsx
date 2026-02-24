@@ -1,7 +1,7 @@
 // Componente principal do editor
 
 import React, { useState } from 'react';
-import DocxImport from './DocxImport';
+import DocxImport from './DocxImport.js';
 
 
 const Editor: React.FC = () => {
