@@ -1,11 +1,23 @@
 // Componente principal do editor
-import React from 'react';
+
+import React, { useState } from 'react';
+import DocxImport from './DocxImport';
+
 
 const Editor: React.FC = () => {
+  const [html, setHtml] = useState<string>('');
+
   return (
     <div>
-      {/* Editor WYSIWYG será implementado aqui */}
-      <p>Editor de texto (em desenvolvimento)</p>
+      <DocxImport onImport={setHtml} />
+      <div className="editor-container" style={{ marginTop: 16 }}>
+        {/* Aqui será exibido o conteúdo importado do .docx */}
+        {html ? (
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        ) : (
+          <p>Editor de texto (em desenvolvimento)</p>
+        )}
+      </div>
     </div>
   );
 };

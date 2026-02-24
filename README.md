@@ -1,3 +1,21 @@
+## Importando arquivos .docx
+
+Você pode importar arquivos do Word (.docx) e exibir o conteúdo formatado no editor:
+
+```tsx
+import React from 'react';
+import { Editor } from 'react-html-doc-editor';
+
+function App() {
+	return (
+		<div>
+			<Editor />
+		</div>
+	);
+}
+```
+
+O componente Editor já inclui a ferramenta de importação de .docx e exibe o conteúdo convertido automaticamente.
 ## Exemplo de uso
 
 ```tsx
