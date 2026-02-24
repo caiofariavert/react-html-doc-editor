@@ -2,18 +2,19 @@
   "name": "react-html-doc-editor",
   "version": "0.1.0",
   "description": "Editor de texto WYSIWYG para React com exportação HTML customizada (estilo Django Template)",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "module": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
-    "src/",
-    "index.ts"
+    "dist/",
+    "src/"
   ],
   "scripts": {
     "build": "tsc",
