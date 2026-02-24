@@ -10,4 +10,7 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/**/index.ts',
   ],
+  moduleNameMapper: {
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+  },
 };
