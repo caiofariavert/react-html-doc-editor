@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { render, screen } from '@testing-library/react';
-import TableButton from '../TableButton';
+import TableButton from '../TableButton.js';
 describe('TableButton Component', () => {
     it('should render a button', () => {
         render(_jsx(TableButton, {}));

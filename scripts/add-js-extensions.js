@@ -17,14 +17,11 @@ function addJsExtensions(dir) {
     } else if (file.endsWith('.js')) {
       let content = fs.readFileSync(filePath, 'utf-8');
 
-      // Add .js extension to relative imports
+      // Add .js extension to relative imports - matches both single and double quotes
+      // Pattern: from [quote]./path/to/file[quote] -> from [quote]./path/to/file.js[quote]
       content = content.replace(
-        /from\s+['"](\.[^'"\.]+)['"];/g,
+        /from\s+['"](\.[^'"]*?)(?<!\.js)['"];/g,
         "from '$1.js';"
-      );
-      content = content.replace(
-        /from\s+["'](\.[^'"\.]+)["'];/g,
-        'from "$1.js";'
       );
 
       fs.writeFileSync(filePath, content);

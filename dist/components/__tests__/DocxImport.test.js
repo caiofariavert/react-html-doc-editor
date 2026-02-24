@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { render } from '@testing-library/react';
-import DocxImport from '../DocxImport';
+import DocxImport from '../DocxImport.js';
 describe('DocxImport Component', () => {
     it('should render file input for .docx files', () => {
         const mockOnImport = jest.fn();

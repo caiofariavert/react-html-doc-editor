@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { render, screen } from '@testing-library/react';
-import Toolbar from '../Toolbar';
+import Toolbar from '../Toolbar.js';
 describe('Toolbar Component', () => {
     it('should render without crashing', () => {
         render(_jsx(Toolbar, {}));

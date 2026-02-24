@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { render } from '@testing-library/react';
-import Editor from '../Editor';
+import Editor from '../Editor.js';
 describe('Editor Component', () => {
     it('should render without crashing', () => {
         render(_jsx(Editor, {}));

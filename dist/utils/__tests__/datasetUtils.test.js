@@ -1,4 +1,4 @@
-import { parseDatasetTable } from '../datasetUtils';
+import { parseDatasetTable } from '../datasetUtils.js';
 describe('datasetUtils utilities', () => {
     it('should have parseDatasetTable function', () => {
         expect(typeof parseDatasetTable).toBe('function');

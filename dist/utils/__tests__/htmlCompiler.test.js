@@ -1,4 +1,4 @@
-import { compileToCustomHTML } from '../htmlCompiler';
+import { compileToCustomHTML } from '../htmlCompiler.js';
 describe('htmlCompiler utilities', () => {
     it('should have compileToCustomHTML function', () => {
         expect(typeof compileToCustomHTML).toBe('function');
