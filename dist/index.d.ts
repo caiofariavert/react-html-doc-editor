@@ -1,6 +1,6 @@
-export { default as Editor } from './src/components/Editor';
-export { default as Toolbar } from './src/components/Toolbar';
-export { default as TableButton } from './src/components/TableButton';
-export { default as DocxImport } from './src/components/DocxImport';
-export * from './src/utils/htmlCompiler';
-export * from './src/utils/datasetUtils';
+export { default as Editor } from './components/Editor';
+export { default as Toolbar } from './components/Toolbar';
+export { default as TableButton } from './components/TableButton';
+export { default as DocxImport } from './components/DocxImport';
+export * from './utils/htmlCompiler';
+export * from './utils/datasetUtils';
