@@ -1,91 +1,138 @@
-## Importando arquivos .docx
+# React HTML Doc Editor
 
-Você pode importar arquivos do Word (.docx) e exibir o conteúdo formatado no editor:
+Uma biblioteca de editor de texto WYSIWYG para React 18+, focada em exportação de conteúdo como HTML customizado (estilo Django Template), com suporte a variáveis, tabelas e blocos de dataset.
+
+## Funcionalidades
+
+- Editor WYSIWYG customizável
+- Importar arquivos .docx (MS Word) automaticamente
+- Exportação para HTML com variáveis no formato `{{ nome_completo }}`
+- Atalho para inserir tabelas simples
+- Bloco especial para datasets/tabelas com loop: `{{table datasource.json_data}} ... {{/table}}`
+- Suporte a cabeçalho e footer em tabelas de dataset
+- Testes automatizados com 19+ testes
+
+## Estrutura do Projeto
+
+```
+src/
+  components/
+    Editor.tsx           # Componente principal do editor
+    Toolbar.tsx          # Barra de ferramentas do editor
+    TableButton.tsx      # Botão/atalho para inserir tabelas
+    DocxImport.tsx       # Componente para importar .docx
+  utils/
+    htmlCompiler.ts      # Funções utilitárias para compilar/exportar HTML customizado
+    datasetUtils.ts      # Funções para manipulação de datasets/tabelas customizadas
+  styles/
+    editor.css           # Estilos do editor
+index.ts                 # Exportação dos componentes principais
+package.json             # Configurações do projeto/biblioteca
+README.md                # Documentação principal
+```
+
+## Tecnologias
+
+- React 18+
+- TypeScript
+- Jest + React Testing Library (testes)
+- Mammoth.js (suporte a .docx)
+
+## Exemplo de uso básico
 
 ```tsx
 import React from 'react';
 import { Editor } from 'react-html-doc-editor';
 
 function App() {
-	return (
-		<div>
-			<Editor />
-		</div>
-	);
-}
-```
-
-O componente Editor já inclui a ferramenta de importação de .docx e exibe o conteúdo convertido automaticamente.
-## Exemplo de uso
-
-```tsx
-import React from 'react';
-import { Editor, Toolbar, TableButton } from 'react-html-doc-editor';
-
-function App() {
-	return (
-		<div>
-			<Toolbar />
-			<Editor />
-			<TableButton />
-		</div>
-	);
+  return (
+    <div>
+      <Editor />
+    </div>
+  );
 }
 
 export default App;
 ```
 
-Para exportar o conteúdo do editor para HTML customizado:
+## Importando arquivos .docx
+
+O componente Editor já inclui suporte para importar arquivos do Word (.docx):
+
+```tsx
+import React from 'react';
+import { Editor } from 'react-html-doc-editor';
+
+function App() {
+  return <Editor />;
+}
+```
+
+## Exportando para HTML customizado
+
+Para exportar o conteúdo do editor para HTML com template syntax:
 
 ```ts
 import { compileToCustomHTML } from 'react-html-doc-editor';
 
 const html = compileToCustomHTML(/* conteúdo do editor */);
 ```
-# React HTML Doc Editor
 
-Uma biblioteca de editor de texto WYSIWYG para React 18+, focada em exportação de conteúdo como HTML customizado (estilo Django Template), com suporte a variáveis, tabelas e blocos de dataset.
+## Testes Automatizados
 
-## Estrutura do Projeto
+Esta biblioteca inclui uma suíte completa de testes automatizados.
 
-```
-src/
-	components/
-		Editor.tsx           # Componente principal do editor
-		Toolbar.tsx          # Barra de ferramentas do editor
-		TableButton.tsx      # Botão/atalho para inserir tabelas
-	utils/
-		htmlCompiler.ts      # Funções utilitárias para compilar/exportar HTML customizado
-		datasetUtils.ts      # Funções para manipulação de datasets/tabelas customizadas
-	styles/
-		editor.css           # Estilos do editor
-index.ts                 # Exportação dos componentes principais
-package.json             # Configurações do projeto/biblioteca
-README.md                # Documentação principal
+### Rodando os testes
+
+```bash
+# Executar testes uma vez
+npm test
+
+# Executar testes em modo watch (re-executa ao salvar)
+npm run test:watch
+
+# Gerar relatório de cobertura
+npm run test:coverage
 ```
 
-## Funcionalidades
+### Cobertura de testes
 
-- Editor WYSIWYG customizável
-- Exportação para HTML com variáveis no formato `{{ nome_completo }}`
-- Atalho para inserir tabelas simples
-- Bloco especial para datasets/tabelas com loop: `{{table datasource.json_data}} ... {{/table}}`
-- Suporte a cabeçalho e footer em tabelas de dataset
+- **Componentes**: Editor, DocxImport, Toolbar, TableButton
+- **Utilitários**: htmlCompiler, datasetUtils
+- **Total**: 19 testes passando ✓
 
-## Tecnologias sugeridas
+## Desenvolvimento
 
-- React 18+
-- TypeScript
-- [Slate.js](https://docs.slatejs.org/) para base do editor (altamente customizável)
+### Instalando dependências
+
+```bash
+npm install
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Testes
+
+```bash
+npm test
+```
 
 ## Como contribuir
 
 1. Instale as dependências
 2. Implemente novas funcionalidades em `src/`
-3. Rode os testes e build antes de enviar PR
+3. Adicione testes em `src/__tests__/` ou próximo ao componente
+4. Rode `npm test` e `npm run build` para validar
+5. Envie um PR com sua mudança
+
+## License
+
+MIT
 
 ---
 
 > Esta biblioteca está em desenvolvimento inicial.
-# react-html-doc-editor
-Editor de documentos que compila em HTML 
