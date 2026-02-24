@@ -136,3 +136,63 @@ MIT
 ---
 
 > Esta biblioteca está em desenvolvimento inicial.
+
+## Editor WYSIWYG
+
+A biblioteca agora inclui um editor WYSIWYG completo baseado em **TipTap** e **ProseMirror**.
+
+### Funcionalidades do editor
+
+- **Formatação de texto**: Negrito, Itálico, Sublinhado
+- **Títulos**: H1, H2, H3
+- **Listas**: Listas com marcadores e numeradas
+- **Tabelas**: Inserção de tabelas com cabeçalhos
+- **Variáveis**: Suporte a variáveis template com sintaxe `{{ nome_variavel }}`
+- **Edição avançada**: Undo/Redo, limpar conteúdo
+- **Responsivo**: Funciona bem em dispositivos móveis
+
+### Usando o WysiwygEditor
+
+```tsx
+import React, { useState } from 'react';
+import { WysiwygEditor } from 'react-html-doc-editor';
+
+function App() {
+  const [html, setHtml] = useState('');
+
+  return (
+    <div>
+      <WysiwygEditor 
+        onContentChange={setHtml}
+        initialContent="<p>Comece a digitar...</p>"
+      />
+      <div>
+        <h3>HTML gerado:</h3>
+        <pre>{html}</pre>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Atalhos de teclado
+
+- **Ctrl+B** - Negrito
+- **Ctrl+I** - Itálico
+- **Ctrl+Shift+V** - Inserir variável
+- **Ctrl+Z** - Desfazer
+- **Ctrl+Shift+Z** - Refazer
+
+### Props do WysiwygEditor
+
+```typescript
+interface WysiwygEditorProps {
+  onContentChange?: (html: string) => void;
+  initialContent?: string;
+}
+```
+
+- `onContentChange`: Função chamada sempre que o conteúdo é alterado, retorna o HTML
+- `initialContent`: Conteúdo HTML inicial do editor
